@@ -1,0 +1,24 @@
+{
+  "name": "russian-classroom-chatbot",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/materials.mjs && vite build",
+    "dev": "npx netlify-cli dev",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@google/genai": "3.4.0",
+    "adm-zip": "^0.5.16",
+    "fast-xml-parser": "^5.3.0",
+    "mammoth": "^1.11.0",
+    "pdf-parse": "1.1.1"
+  },
+  "devDependencies": {
+    "vite": "^7.2.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
