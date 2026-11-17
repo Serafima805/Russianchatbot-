@@ -39,9 +39,9 @@ $('start').onclick=async()=>{
     mic.port.onmessage=e=>{if(active&&!muted&&session){try{session.sendRealtimeInput({audio:{data:encodePCM(e.data,ctx.sampleRate),mimeType:'audio/pcm;rate=16000'}});}catch{void finish('Audio connection ended. Please start again.');}}};
     source.connect(mic);mic.connect(ctx.destination);
     rows=[];current={};$('transcript').replaceChildren();$('download').disabled=true;muted=false;$('mute').textContent='Mute microphone';$('stop').disabled=false;$('mute').disabled=false;connecting=false;
-    $('materials').textContent='Course materials: '+data.files.join(', ');
+    $('materials').textContent=data.practiceMode==='general'?'General beginner practice — classroom materials have not been added for the active week.':'Course materials: '+data.files.join(', ');
     status('Connected — listen to Anna, then answer in Russian.');
-    session.sendRealtimeInput({text:'Begin the assigned five-question practice now. Greet me briefly and ask the first question using the course materials.'});
+    session.sendRealtimeInput({text:'Begin the five-question practice now, following your system instructions. Greet me briefly and ask the first question.'});
     timer=setTimeout(()=>void finish('Practice time is complete. Download your transcript.'),data.minutes*60000);
   }catch(e){await finish(e.name==='NotAllowedError'?'Microphone permission was denied. Allow it in your browser, then try again.':e.message||'Could not connect. Please try again.');}
 };
