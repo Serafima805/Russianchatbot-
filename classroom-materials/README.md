@@ -6,7 +6,7 @@ Supported: PowerPoint (.pptx), PDF with selectable text, Word (.docx), plain tex
 
 Include the week in every filename, e.g. `Week 5 Monday Interview.pptx`. The chatbot uses all materials through `maxWeek` in the root `classroom-config.json`. Change that number as your class progresses. Documents without a week cause a build error so they cannot accidentally introduce advanced material.
 
-Do not include this README as teaching content. Start by uploading your own slides; no invented sample curriculum is used. Without materials the chatbot refuses to start.
+Do not include this README as teaching content. Before you upload slides, the chatbot offers general beginner practice. It does not claim this reflects your course. Once materials are available through the active week, new conversations automatically use those materials.
 
 This repository is PUBLIC: uploaded files can be read by anyone. Upload only materials you may share publicly; no student names, submissions, grades or private data. Change repository visibility to private before uploading private teaching files.
 
